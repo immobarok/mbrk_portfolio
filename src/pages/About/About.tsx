@@ -6,6 +6,7 @@ const About = () => {
         We combine years of web design and branding expertise to craft
         meaningful, story-driven experiences
       </h1>
+      <p>So you can go down now </p>
     </main>
   );
 };

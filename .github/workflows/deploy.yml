@@ -29,4 +29,5 @@ jobs:
           publish_dir: ./dist
 
       - name: Deploy to Vercel
-        run: npx vercel --token=${{ secrets.VERCEL_TOKEN }} --prod
+        run: npx vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+
