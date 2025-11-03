@@ -1,0 +1,44 @@
+FROM node:22.19.0-alpine
+RUN addgroup app && adduser -S -G app app
+USER app
+WORKDIR /app
+
+COPY package*.json ./
+
+
+USER root
+RUN chown -R app:app /app .
+
+USER app
+#install dependencies
+RUN npm install
+COPY . .
+
+
+EXPOSE 5173
+
+#build the project
+CMD npm run build
+FROM node:22.19.0-alpine
+RUN addgroup app && adduser -S -G app app
+USER app
+WORKDIR /app
+
+COPY package*.json ./
+
+
+USER root
+RUN chown -R app:app /app .
+
+USER app
+#install dependencies
+RUN npm install
+COPY . .
+
+
+EXPOSE 5173
+
+#build the project
+CMD npm run build
+
+
